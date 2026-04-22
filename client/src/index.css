@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-indigo: #6366f1;
+  --color-indigo-dark: #4f46e5;
+  --color-dark: #111;
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --shadow-subtle: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-white text-dark font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-2 px-6 py-3 rounded-lg transition-all duration-200 font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-indigo text-white hover:bg-indigo-dark;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-200 hover:bg-gray-50;
+  }
+  
+  .card {
+    @apply bg-white border border-gray-100 p-6 rounded-lg shadow-subtle;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.2s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Custom scrollbar for minimalist look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #eee;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
